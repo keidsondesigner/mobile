@@ -11,10 +11,10 @@ export function New() {
 		<VStack flex={1} bgColor="gray.900">
 			<Header title="Criar novo bolão" />
 
-			<VStack mt={8} mx={5} alignItems="center">
+			<VStack mt={12} mx={5} alignItems="center">
 				<Logo />
 
-				<Heading fontFamily="heading" color="white" fontSize="xl" my={8} textAlign="center">
+				<Heading fontFamily="heading" color="white" fontSize="lg" my={10} textAlign="center">
 					Crie seu própio botão da copa{'\n'} 
 					e compartilhe entre amigos!
 				</Heading>
