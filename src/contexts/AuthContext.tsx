@@ -27,6 +27,7 @@ export const AuthContext = createContext({} as AuthContextDataProps);
 // Permite compartilhar esse contexto, com toda nossa aplicação;
 export function AuthContextProvider({ children }: AuthProviderProps){
 	// Permite guardar as informaçoes do user autenticado
+	// user tem todas as infos do usuário logado
 	const [user, setUser] = useState<UserProps>({} as UserProps);
 
 	const [isUserLoading, setIsUserLoading] = useState(false);
@@ -55,11 +56,10 @@ export function AuthContextProvider({ children }: AuthProviderProps){
 
 		try {
 			setIsUserLoading(true);
-
 			// Inserindo o accessToken em todos usuários logados;
 			const tokenResponse = await api.post('/users', { access_token });
-			console.log('AQUI o tokenResponse=>', tokenResponse);
-			//api.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse.data.token}`;
+			//console.log('AQUI o tokenResponse=>', tokenResponse);
+			api.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse.data.token}`;
 
 			// Recupear os dados do usuário, logado;
 			const userInfoResponse = await api.get('/me');
