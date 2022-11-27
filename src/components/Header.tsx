@@ -16,9 +16,7 @@ export function Header({ title, showBackButton = false, showShareButton = false 
     <HStack w="full" h={24} bgColor="gray.800" alignItems="flex-end" pb={5} px={5}>
       <HStack w="full" alignItems="center" justifyContent="space-between">
         {
-          showBackButton
-            ? <ButtonIcon icon={CaretLeft} />
-            : <EmptyBoxSpace />
+          showBackButton ? <ButtonIcon icon={CaretLeft} /> : <EmptyBoxSpace />
         }
 
         <Text color="white" fontFamily="medium" fontSize="md" textAlign="center">
@@ -26,11 +24,7 @@ export function Header({ title, showBackButton = false, showShareButton = false 
         </Text>
 
         {
-          showShareButton
-            ?
-            <ButtonIcon icon={Export} />
-            :
-            <EmptyBoxSpace />
+          showShareButton ? <ButtonIcon icon={Export} /> : <EmptyBoxSpace />
         }
       </HStack>
     </HStack>
